@@ -1,14 +1,14 @@
 /**
  * 
  */
-package j.gonzalezca.test;
+package j.gonzalezca.test.complexnumber;
 
 import static org.junit.Assert.*;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import j.gonzalezca.main.ComplexNumber;
+import j.gonzalezca.src.complexnumber.ComplexNumber;
 
 
 public class ComplexNumberTest {

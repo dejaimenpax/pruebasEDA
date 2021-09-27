@@ -1,4 +1,4 @@
-package j.gonzalezca.main;
+package j.gonzalezca.src.complexnumber;
 
 public class ComplexNumber {
 	
