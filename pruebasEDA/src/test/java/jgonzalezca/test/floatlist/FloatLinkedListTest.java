@@ -1,4 +1,4 @@
-package j.gonzalezca.test.floatlist;
+package jgonzalezca.test.floatlist;
 
 
 

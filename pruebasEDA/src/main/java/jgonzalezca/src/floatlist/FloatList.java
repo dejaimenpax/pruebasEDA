@@ -1,4 +1,4 @@
-package j.gonzalezca.src.floatlist;
+package jgonzalezca.src.floatlist;
 
 public interface FloatList {
     
