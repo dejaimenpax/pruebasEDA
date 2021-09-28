@@ -1,53 +1,66 @@
 package jgonzalezca.src.floatlist;
 
 public class FloatLinkedList implements FloatList{
+	
+	private FloatNode head;
+	private int size;
+	
+	public FloatLinkedList() {
+		this.head = null;
+		this.size = 0;
+	}
 
-    @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	return this.size;
     }
 
-    @Override
     public boolean isempty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	return size==0;
     }
 
-    @Override
+
     public void add(Float value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	if (value != null) {
+    		FloatNode newNode = new FloatNode(value);
+    		newNode.setNext(this.head);
+    		this.head = newNode;
+    		size++;
+    	}
     }
 
-    @Override
+
     public void add(int index, Float value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public Float remove() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	Float first = this.head.getElem();
+    	this.head = this.head.getNext();
+    	return first;
     }
 
-    @Override
+   
     public Float remove(int index) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public Float get() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	return this.head.getElem();
     }
 
-    @Override
+    
     public Float get(int index) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public int search(Float value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public boolean contains(Float value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

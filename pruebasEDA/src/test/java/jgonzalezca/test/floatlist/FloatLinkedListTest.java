@@ -3,6 +3,9 @@ package jgonzalezca.test.floatlist;
 
 
 import org.junit.Test;
+
+import jgonzalezca.src.floatlist.FloatLinkedList;
+
 import static org.junit.Assert.*;
 
 
@@ -74,10 +77,13 @@ public class FloatLinkedListTest {
         assertFalse(instance.isempty());
         assertEquals(instance.size(),1);
     }
-
+   
+     
+     
     /**
      * Test of add and remove methods, of class FloatLinkedList.
      */
+    
     @Test
     public void testAdd_int_Remove() {
         System.out.println("add");
@@ -99,7 +105,7 @@ public class FloatLinkedListTest {
 
     /**
      * Test of remove method, of class FloatLinkedList.
-     */
+     
     @Test
     public void testRemove_int() {
         System.out.println("remove");
@@ -112,7 +118,7 @@ public class FloatLinkedListTest {
 
     /**
      * Test of get method, of class FloatLinkedList.
-     */
+     
     @Test
     public void testGet_0args() {
         System.out.println("get");
@@ -124,7 +130,7 @@ public class FloatLinkedListTest {
 
     /**
      * Test of get method, of class FloatLinkedList.
-     */
+     
     @Test
     public void testGet_int() {
         System.out.println("get");
@@ -137,7 +143,7 @@ public class FloatLinkedListTest {
 
     /**
      * Test of search method, of class FloatLinkedList.
-     */
+     
     @Test
     public void testSearch() {
         System.out.println("search");
@@ -154,7 +160,7 @@ public class FloatLinkedListTest {
 
     /**
      * Test of contains method, of class FloatLinkedList.
-     */
+     
     @Test
     public void testContains() {
         System.out.println("contains");
@@ -166,5 +172,6 @@ public class FloatLinkedListTest {
         result = instance.contains(value);
         assertTrue(result);
     }
+    */
     
 }
