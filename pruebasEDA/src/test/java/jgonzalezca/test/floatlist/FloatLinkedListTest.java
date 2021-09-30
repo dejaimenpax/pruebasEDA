@@ -91,7 +91,7 @@ public class FloatLinkedListTest {
         Float value = new Float(5);
         FloatLinkedList instance = inicializa(); // [12, 8, 3]
         instance.add(index, value); // [12, 8, 5, 3]
-        assertEquals(instance.size(),4);
+        assertEquals(instance.size(),4); 
         Float remove = instance.remove();
         assertEquals(12.0,remove,0.01);
         remove = instance.remove();
@@ -105,7 +105,8 @@ public class FloatLinkedListTest {
 
     /**
      * Test of remove method, of class FloatLinkedList.
-     
+     * 
+     */
     @Test
     public void testRemove_int() {
         System.out.println("remove");
@@ -118,7 +119,7 @@ public class FloatLinkedListTest {
 
     /**
      * Test of get method, of class FloatLinkedList.
-     
+     */
     @Test
     public void testGet_0args() {
         System.out.println("get");
@@ -130,7 +131,7 @@ public class FloatLinkedListTest {
 
     /**
      * Test of get method, of class FloatLinkedList.
-     
+     */
     @Test
     public void testGet_int() {
         System.out.println("get");
@@ -143,7 +144,7 @@ public class FloatLinkedListTest {
 
     /**
      * Test of search method, of class FloatLinkedList.
-     
+     */
     @Test
     public void testSearch() {
         System.out.println("search");
@@ -160,7 +161,8 @@ public class FloatLinkedListTest {
 
     /**
      * Test of contains method, of class FloatLinkedList.
-     
+     */
+    
     @Test
     public void testContains() {
         System.out.println("contains");
@@ -172,6 +174,6 @@ public class FloatLinkedListTest {
         result = instance.contains(value);
         assertTrue(result);
     }
-    */
+    
     
 }
