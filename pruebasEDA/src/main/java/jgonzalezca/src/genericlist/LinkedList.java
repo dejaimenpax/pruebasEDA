@@ -1,7 +1,6 @@
 package jgonzalezca.src.genericlist;
 
 
-
 public class LinkedList<E> implements GenericList<E> {
 	
     private class Node<E>{
@@ -23,6 +22,10 @@ public class LinkedList<E> implements GenericList<E> {
 
         public void setNext(Node<E> next) {
             this.next = next;
+        }
+        
+        public boolean isLast() {
+        	return next==null;
         }
         
         public Node(E e, Node<E> sig){
@@ -54,29 +57,26 @@ public class LinkedList<E> implements GenericList<E> {
 
 
     public void add(E value) {
-    	if (value != null) {
-    		Node<E> newNode = new Node<E>(value);
-    		newNode.setNext(this.head);
-    		this.head = newNode;
-    		size++;
-    	}
+    	Node<E> newNode = new Node<>(value, this.head);
+    	this.head = newNode;
+    	size++;	
     }
 
 
     public void add(int index, E value){
-    	if ((index>=1)&&(index<=size)&&(!this.isempty())) {
+    	if ((index>=1)&&(index<=size)) {
     		if (index==1) {
     			Node<E> newNode = new Node<E>(value, this.head);
     			this.head = newNode;
     		}
     		else {
-    			Node<E> prev = this.head;
-    			Node<E> follow = prev.getNext();
-    			for (int pos = 1; pos<index; pos++) {
+    			Node<E> prev = null;
+    			Node<E> follow = this.head;
+    			for (int pos = 2; pos<=index+1; pos++) {
     				prev = follow;
     				follow = prev.getNext();
     			}
-    			Node<E> newNode = new Node<E>(value, follow);
+    			Node<E> newNode = new Node<>(value, follow);
     			prev.setNext(newNode);		
     		}
     		size++;
@@ -97,7 +97,7 @@ public class LinkedList<E> implements GenericList<E> {
 
    
     public E remove(int index) {
-    	if ((index>=1)&&(index<=size)&&(!this.isempty())) {
+    	if ((index>=1)&&(index<=size)) {
     		size--;
     		if (index==1) {
     			E first = this.head.getElem();
@@ -105,13 +105,13 @@ public class LinkedList<E> implements GenericList<E> {
         		return first;
     		}
     		else {
-       			Node<E> prev = this.head;
-    			Node<E> follow = prev.getNext();
+       			Node<E> prev = null;
+    			Node<E> follow = this.head;
     			for (int pos = 1; pos<index; pos++) {
     				prev = follow;
     				follow = prev.getNext();
     			}
-    			E ele = prev.getElem();
+    			E ele = follow.getElem();
     			prev.setNext(follow.getNext());	
     			return ele;
     		}
@@ -127,7 +127,7 @@ public class LinkedList<E> implements GenericList<E> {
 
     
     public E get(int index) {
-    	if ((index>=1)&&(index<=size)&&(!this.isempty())) {
+    	if ((index>=1)&&(index<=size)) {
     		if (index==1) {
     			return this.head.getElem();
     		}
@@ -152,7 +152,7 @@ public class LinkedList<E> implements GenericList<E> {
     	else {
     		int pos = 1;
     		Node<E> follow = this.head;
-    		while (pos<size) {
+    		while (!follow.isLast()) {
     			follow = follow.getNext();
     			pos++;
     			if (follow.getElem().equals(value)) {
@@ -165,23 +165,12 @@ public class LinkedList<E> implements GenericList<E> {
 
     
     public boolean contains(E value) {
-    	if (this.isempty()) 
+    	int res = search(value);
+    	if (res==0)
     		return false;
-    	else if (this.head.getElem().equals(value))
+    	else 
     		return true;
-    	else {
-    		int pos = 1;
-    		Node<E> follow = this.head;
-    		boolean encontrado = false;
-    		while ((pos<size)&&(!encontrado)) {
-    			follow = follow.getNext();
-    			pos++;
-    			if (follow.getElem().equals(value)) {
-    				encontrado = true;
-    			}
-    		}
-    		return encontrado;
-    	}
     }
-
+  
+    
 }
