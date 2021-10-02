@@ -20,25 +20,22 @@ public class FloatLinkedList implements FloatList{
 
 
     public void add(Float value) {
-    	if (value != null) {
-    		FloatNode newNode = new FloatNode(value);
-    		newNode.setNext(this.head);
-    		this.head = newNode;
-    		size++;
-    	}
+    	FloatNode newNode = new FloatNode(value, this.head);
+    	this.head = newNode;
+    	size++;	
     }
 
 
     public void add(int index, Float value){
-    	if ((index>=1)&&(index<=size)&&(!this.isempty())) {
+    	if ((index>=1)&&(index<=size)) {
     		if (index==1) {
     			FloatNode newNode = new FloatNode(value, this.head);
     			this.head = newNode;
     		}
     		else {
-    			FloatNode prev = this.head;
-    			FloatNode follow = prev.getNext();
-    			for (int pos = 1; pos<index; pos++) {
+    			FloatNode prev = null;
+    			FloatNode follow = this.head;
+    			for (int pos = 2; pos<=index+1; pos++) {
     				prev = follow;
     				follow = prev.getNext();
     			}
@@ -63,7 +60,7 @@ public class FloatLinkedList implements FloatList{
 
    
     public Float remove(int index) {
-    	if ((index>=1)&&(index<=size)&&(!this.isempty())) {
+    	if ((index>=1)&&(index<=size)) {
     		size--;
     		if (index==1) {
     			Float first = this.head.getElem();
@@ -71,13 +68,13 @@ public class FloatLinkedList implements FloatList{
         		return first;
     		}
     		else {
-       			FloatNode prev = this.head;
-    			FloatNode follow = prev.getNext();
+       			FloatNode prev = null;
+    			FloatNode follow = this.head;
     			for (int pos = 1; pos<index; pos++) {
     				prev = follow;
     				follow = prev.getNext();
     			}
-    			Float ele = prev.getElem();
+    			Float ele = follow.getElem();
     			prev.setNext(follow.getNext());	
     			return ele;
     		}
@@ -93,7 +90,7 @@ public class FloatLinkedList implements FloatList{
 
     
     public Float get(int index) {
-    	if ((index>=1)&&(index<=size)&&(!this.isempty())) {
+    	if ((index>=1)&&(index<=size)) {
     		if (index==1) {
     			return this.head.getElem();
     		}
@@ -118,7 +115,7 @@ public class FloatLinkedList implements FloatList{
     	else {
     		int pos = 1;
     		FloatNode follow = this.head;
-    		while (pos<size) {
+    		while (!follow.isLast()) {
     			follow = follow.getNext();
     			pos++;
     			if (follow.getElem().equals(value)) {
@@ -131,23 +128,12 @@ public class FloatLinkedList implements FloatList{
 
     
     public boolean contains(Float value) {
-    	if (this.isempty()) 
+    	int res = search(value);
+    	if (res==0)
     		return false;
-    	else if (this.head.getElem().equals(value))
+    	else 
     		return true;
-    	else {
-    		int pos = 1;
-    		FloatNode follow = this.head;
-    		boolean encontrado = false;
-    		while ((pos<size)&&(!encontrado)) {
-    			follow = follow.getNext();
-    			pos++;
-    			if (follow.getElem().equals(value)) {
-    				encontrado = true;
-    			}
-    		}
-    		return encontrado;
-    	}
     }
+  
     
 }

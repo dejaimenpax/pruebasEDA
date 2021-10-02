@@ -1,4 +1,4 @@
-package jgonzalezca.test.floatlist;
+package jgonzalezca.test.genericlist;
 
 import org.junit.Test;
 
@@ -6,18 +6,17 @@ import jgonzalezca.src.floatlist.FloatLinkedList;
 
 import static org.junit.Assert.*;
 
-
-public class FloatLinkedListTest {
-    
-    public FloatLinkedListTest() {
+public class LinkedListTest<> {
+	
+	public LinkedListTest() {
     }
     
     
-    public FloatLinkedList inicializa(){
+    public LinkedList<Integer> inicializa(){
        
-        FloatLinkedList instance = new FloatLinkedList();
+        LinkedList instance = new FloatLinkedList();
         
-        instance.add(new Float(3));
+        instance.add(new Integer(3));
         instance.add(new Float(8));
         instance.add(new Float(12));
         
@@ -114,21 +113,6 @@ public class FloatLinkedListTest {
         assertEquals(8.0, result,0.01);
        
     }
-    
-    @Test
-    public void testRemove_profe() {
-        System.out.println("removeProfe");
-        int index = 3;
-        FloatLinkedList instance = inicializa(); // [12, 8, 3]
-        instance.add(5f); // [5, 12, 8, 3]
-        Float result = instance.remove(index);// 8
-        assertEquals(8.0, result,0.01);
-        assertEquals(5.0, instance.get(1), 0.01);
-        assertEquals(12.0, instance.get(2), 0.01);
-        assertEquals(3.0, instance.get(3), 0.01);
-    }
-    
-    
 
     /**
      * Test of get method, of class FloatLinkedList.
@@ -187,6 +171,5 @@ public class FloatLinkedListTest {
         result = instance.contains(value);
         assertTrue(result);
     }
-    
-    
+
 }

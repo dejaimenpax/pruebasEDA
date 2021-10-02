@@ -39,5 +39,9 @@ public class FloatNode{
 	public FloatNode copy() {
 		return new FloatNode(this.element, this.next);
 	}
+	
+	public boolean isLast() {
+		return next==null;
+	}
 
 }
