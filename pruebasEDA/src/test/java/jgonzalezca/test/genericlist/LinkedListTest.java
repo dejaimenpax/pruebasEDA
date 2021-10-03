@@ -2,7 +2,6 @@ package jgonzalezca.test.genericlist;
 
 import org.junit.Test;
 
-
 import jgonzalezca.src.genericlist.LinkedList;
 
 import static org.junit.Assert.*;
