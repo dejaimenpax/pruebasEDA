@@ -106,11 +106,20 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
     	if (!this.isempty()){
     		LinkedNode<E> ourNode = this.checkPosition(pos);
     		E elem = ourNode.getElement();
-    		if (ourNode.getPrev()==null)
+    		if ((ourNode.getNext()==null)&&(ourNode.getPrev()==null)) {
+    			this.head=null;
+    		}
+    		else if (ourNode.getPrev()==null) {
+    			ourNode.getNext().setPrev(null);
     			this.head = ourNode.getNext();
-    		else
+    		}
+    		else if (ourNode.getNext()==null) {
+    			ourNode.getPrev().setNext(null);
+    		}
+    		else {
     			ourNode.getPrev().setNext(ourNode.getNext());
-    		ourNode.getNext().setPrev(ourNode.getPrev());
+    			ourNode.getNext().setPrev(ourNode.getPrev());
+    		}
     		size--;
     		return elem;
     	}
@@ -147,7 +156,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
     }
     
     public Iterator<Position<E>> iterator(){
-    	return this.iterator();
+    	
     	
     }
     
