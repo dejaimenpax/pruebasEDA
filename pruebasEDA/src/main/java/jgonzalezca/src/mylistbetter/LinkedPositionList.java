@@ -22,6 +22,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
             return next;
         }
         
+        
         public LinkedNode<E> getPrev() {
             return prev;
         }
@@ -79,52 +80,70 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
     	return (Position<E>) newNode;
     }
     
-    public Position<E> addAfter(Position<E> pos, E value) throws Exception{
-    	LinkedNode<E> prevNode = this.checkPosition(pos);
-    	LinkedNode<E> newNode = new LinkedNode<>(value, prevNode, prevNode.getNext());
-    	prevNode.setNext(newNode);
-    	if (prevNode.getNext()!=null){
-    		prevNode.getNext().setPrev(newNode);
-    	}
-    	this.size++;
-    	return (Position<E>) newNode;  	
+    public Position<E> addAfter(Position<E> pos, E value){
+    	try {
+			LinkedNode<E> prevNode = this.checkPosition(pos);
+			LinkedNode<E> newNode = new LinkedNode<>(value, prevNode, prevNode.getNext());
+			prevNode.setNext(newNode);
+			if (prevNode.getNext()!=null){
+				prevNode.getNext().setPrev(newNode);
+			}
+			this.size++;
+			return (Position<E>) newNode;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}  	
     }
     
-    public Position<E> addBefore(Position<E> pos, E value) throws Exception{
-    	LinkedNode<E> nextNode = this.checkPosition(pos);
-    	LinkedNode<E> newNode = new LinkedNode<>(value, nextNode.getPrev(), nextNode);
-    	if (this.head==nextNode)
-    		this.head = newNode;
-    	else if (nextNode.getPrev()!=null)
-    		nextNode.getPrev().setNext(newNode);
-    	nextNode.setPrev(newNode);
-    	this.size++;
-    	return (Position<E>) newNode;  	
+    public Position<E> addBefore(Position<E> pos, E value){
+    	try {
+			LinkedNode<E> nextNode = this.checkPosition(pos);
+			LinkedNode<E> newNode = new LinkedNode<>(value, nextNode.getPrev(), nextNode);
+			if (this.head==nextNode)
+				this.head = newNode;
+			else if (nextNode.getPrev()!=null)
+				nextNode.getPrev().setNext(newNode);
+			nextNode.setPrev(newNode);
+			this.size++;
+			return (Position<E>) newNode;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}  	
     }
     
-    public E remove(Position<E> pos) throws Exception {
-    	if (!this.isempty()){
-    		LinkedNode<E> ourNode = this.checkPosition(pos);
-    		E elem = ourNode.getElement();
-    		if ((ourNode.getNext()==null)&&(ourNode.getPrev()==null)) {
-    			this.head=null;
-    		}
-    		else if (ourNode.getPrev()==null) {
-    			ourNode.getNext().setPrev(null);
-    			this.head = ourNode.getNext();
-    		}
-    		else if (ourNode.getNext()==null) {
-    			ourNode.getPrev().setNext(null);
-    		}
-    		else {
-    			ourNode.getPrev().setNext(ourNode.getNext());
-    			ourNode.getNext().setPrev(ourNode.getPrev());
-    		}
-    		size--;
-    		return elem;
-    	}
-    	else
-    		throw new RuntimeException("Empty list!");
+    public E remove(Position<E> pos){
+    	try {
+			if (!this.isempty()){
+				LinkedNode<E> ourNode = this.checkPosition(pos);
+				E elem = ourNode.getElement();
+				if ((ourNode.getNext()==null)&&(ourNode.getPrev()==null)) {
+					this.head=null;
+				}
+				else if (ourNode.getPrev()==null) {
+					ourNode.getNext().setPrev(null);
+					this.head = ourNode.getNext();
+				}
+				else if (ourNode.getNext()==null) {
+					ourNode.getPrev().setNext(null);
+				}
+				else {
+					ourNode.getPrev().setNext(ourNode.getNext());
+					ourNode.getNext().setPrev(ourNode.getPrev());
+				}
+				size--;
+				return elem;
+			}
+			else
+				throw new RuntimeException("Empty list!");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
     }
     
     public Position<E> get(){
@@ -134,13 +153,23 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
     		throw new RuntimeException("Empty list!");  	
     }
     
-    public Position<E> set(Position<E> pos, E value) throws Exception{
-    	LinkedNode<E> ourNode = this.checkPosition(pos);
-    	ourNode.setElement(value);
-    	return (Position<E>) ourNode;
+    public Position<E> set(Position<E> pos, E value){
+    	try {
+			LinkedNode<E> ourNode = this.checkPosition(pos);
+			ourNode.setElement(value);
+			return (Position<E>) ourNode;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
     }
     
     public Position<E> search(E value){
+    	if (this.isempty()) {
+    		return null;
+    	}
+    	else {
     	Iterator<Position<E>> it = this.iterator();
     	Position<E> pos = null;
     	while (it.hasNext()) {
@@ -149,6 +178,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
     			return pos;
     	}
     	return pos;
+    	}
     }
     
     public boolean contains (E value) {
@@ -156,8 +186,17 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
     }
     
     public Iterator<Position<E>> iterator(){
-    	
-    	
+    	return new IteratorLinkedPosition<>(this);
+    }
+    
+    public Position<E> getNextPosition(){
+		try {
+			return (Position<E>) this.checkPosition(head.getNext()); //redundante?
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} 
     }
     
 
