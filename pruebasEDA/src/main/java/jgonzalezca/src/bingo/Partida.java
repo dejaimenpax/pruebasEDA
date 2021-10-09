@@ -41,8 +41,8 @@ public class Partida {
 		this.totaljugadores++;
 	}
 	
-	private double calculaPremio() {
-		return ((PRECIOCARTON*totalcartones)*(1/2));
+	public double calculaPremio() {
+		return PRECIOCARTON*this.totalcartones*0.5;
 	}
 	
 	public void vendeCarton(Jugador player){
@@ -55,11 +55,10 @@ public class Partida {
 		this.ganadores = new HashSet<Jugador>();
 		this.jugadores = listaJugadores;
 		this.totalcartones=0;
-		this.totaljugadores=0;
+		this.totaljugadores= listaJugadores.size();
 		Bombo bombo = new Bombo();
 		for (Jugador player : listaJugadores) {
 			this.totalcartones = player.getNcartones() + this.totalcartones;
-			this.totaljugadores++;
 		}
 		System.out.println("¡Comienza la partida! Hoy el premio es de "+ this.calculaPremio() + "€");
 		//Ya tenemos a los jugadores que previamente han comprado sus cartones. Comienza el juego.
