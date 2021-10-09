@@ -66,7 +66,7 @@ public class Partida {
 		int cantadores = 0;
 		int bolasacada;
 		Jugador person;
-		while ((lineaobingo!=0)&&(cantadores==0)) {
+		while (cantadores==0) {
 			System.out.println("Sacando bola...");
 			bolasacada = bombo.sacaBola();
 			System.out.println("¡Ha salido el " + bolasacada+"!");
@@ -87,7 +87,7 @@ public class Partida {
 		//Han cantado linea, ahora a por bingo
 		this.ganadores = new HashSet<Jugador>();
 		cantadores=0;
-		while ((lineaobingo!=1)&&(cantadores==0)) {
+		while (cantadores==0) {
 			System.out.println("Sacando bola...");
 			bolasacada = bombo.sacaBola();
 			System.out.println("¡Ha salido el " + bolasacada+"!");
