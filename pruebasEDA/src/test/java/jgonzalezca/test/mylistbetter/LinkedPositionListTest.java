@@ -138,7 +138,7 @@ public class LinkedPositionListTest<E> {
 
 	    /**
 	     * Test of search method, of class FloatLinkedList.
-	     */
+	     
 	    @Test
 	    public void testSearch() {
 	        System.out.println("search");

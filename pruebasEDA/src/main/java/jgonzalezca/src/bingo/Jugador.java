@@ -25,31 +25,15 @@ public class Jugador {
 		return dni;
 	}
 
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-	
-	public LinkedList<Carton> getCartones() {
-		return cartones;
-	}
-	
 	public void compraCarton() {
 		cartones.add(generaCarton());
 		ncartones++;
-	}
-	
-	public void setCartones(LinkedList<Carton> cartones) {
-		this.cartones = cartones;
 	}
 
 	public int getNcartones() {
 		return ncartones;
 	}
 
-	public void setNcartones(int ncartones) {
-		this.ncartones = ncartones;
-	}
-	
 	public Carton generaCarton() {
 		Carton carton = new Carton();
 		int numero;
