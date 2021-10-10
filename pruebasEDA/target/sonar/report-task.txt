@@ -1,0 +1,6 @@
+projectKey=j.gonzalezca.2017:pruebasEDA
+serverUrl=http://localhost:9000
+serverVersion=9.1.0.47736
+dashboardUrl=http://localhost:9000/dashboard?id=j.gonzalezca.2017%3ApruebasEDA
+ceTaskId=AXxpErAOFjbpIyI4v_lY
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXxpErAOFjbpIyI4v_lY
