@@ -11,9 +11,9 @@ public class Carton {
 	private static final int LINESIZE = 5;
 	
 	public Carton() {
-		linea_1 = new HashSet<Integer>();
-		linea_2 = new HashSet<Integer>();
-		linea_3 = new HashSet<Integer>();
+		linea_1 = new HashSet<>();
+		linea_2 = new HashSet<>();
+		linea_3 = new HashSet<>();
 	
 	}
 	

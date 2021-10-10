@@ -19,7 +19,7 @@ public class Main {
 			jug.compraCarton(); //pongamos que cada uno compra 2
 			jug.compraCarton();
 		}
-		Partida juego = new Partida(listaplayers);
+		new Partida(listaplayers);
 	}
 
 }

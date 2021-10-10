@@ -2,6 +2,7 @@ package jgonzalezca.src.bingo;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Jugador {
 	
@@ -13,7 +14,7 @@ public class Jugador {
 	public Jugador() {
 		ncartones = 0;
 		dni = null;
-		cartones = new LinkedList<Carton>();
+		cartones = new LinkedList<>();
 	}
 	
 	public Jugador(String id) {
@@ -38,7 +39,8 @@ public class Jugador {
 		Carton carton = new Carton();
 		int numero;
 		while (carton.size()<CARTONSIZE) { //aqui ya comprueba si el carton esta lleno, cosa que no hace addnumero. deberia optimizar carton.size()?
-			numero = (int)  Math.floor(Math.random() * 90 + 1);
+			Random r = new Random();
+			numero = r.nextInt(Bombo.getMaxsize()) + 1;
 			if (!carton.pertenece(numero)) //un carton puede tener numeros repetidos? si es así, borrar el if
 				carton.addNumero(numero);
 		} 
