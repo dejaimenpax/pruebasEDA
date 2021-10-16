@@ -77,7 +77,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
     	}
     	this.head = newNode;
     	size++;	
-    	return (Position<E>) newNode;
+    	return (Position<E>) newNode; //el casteo es innecesario, LinkedNode implementa position
     }
     
     public Position<E> addAfter(Position<E> pos, E value){
