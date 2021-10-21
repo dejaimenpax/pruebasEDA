@@ -37,7 +37,7 @@ public interface MyListBetter<E> extends Iterable<Position<E>>{
      * @param pos
      * @param value 
      * @return  
-     * @throws Exception 
+     * @throws RuntimeException 
      */
     public Position<E> addAfter(Position<E> pos, E value);
     
@@ -47,7 +47,7 @@ public interface MyListBetter<E> extends Iterable<Position<E>>{
      * @param pos
      * @param value 
      * @return  
-     * @throws Exception 
+     * @throws RuntimeException 
      */
     public Position<E> addBefore(Position<E> pos, E value);
     
@@ -56,7 +56,7 @@ public interface MyListBetter<E> extends Iterable<Position<E>>{
      * 
      * @param pos
      * @return 
-     * @throws Exception 
+     * @throws RuntimeException 
      */
     public E remove(Position<E> pos);
     
@@ -74,7 +74,7 @@ public interface MyListBetter<E> extends Iterable<Position<E>>{
      * @param pos
      * @param value
      * @return 
-     * @throws Exception 
+     * @throws RuntimeException 
      */
     public Position<E> set(Position<E> pos, E value);
     

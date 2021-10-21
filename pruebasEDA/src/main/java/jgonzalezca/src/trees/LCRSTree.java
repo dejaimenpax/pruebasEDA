@@ -54,7 +54,7 @@ public class LCRSTree<E> implements NAryTree<E> {
 
         @Override
         public T getElement() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
         
         public LCRSnode(T element) {
@@ -76,9 +76,9 @@ public class LCRSTree<E> implements NAryTree<E> {
     	return this.checkPosition(root);
     }
     
-    private LCRSnode<E> checkPosition(Position<E> p) throws Exception{
+    private LCRSnode<E> checkPosition(Position<E> p) throws RuntimeException{
 		if (p == null || !(p instanceof LCRSnode)) {
-			throw new Exception("Invalid position");
+			throw new RuntimeException("Invalid position");
 		}
 		return (LCRSnode<E>) p;
 	}
@@ -96,12 +96,12 @@ public class LCRSTree<E> implements NAryTree<E> {
 
     @Override
     public void swapElements(Position<E> p1, Position<E> p2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public E replace(Position<E> p, E e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -112,28 +112,28 @@ public class LCRSTree<E> implements NAryTree<E> {
 
     @Override
     public NAryTree<E> subTree(Position<E> v) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void attach(Position<E> p, NAryTree<E> t) {
     	//si es un attach sin posicion puedo hacerlo en O(1), ya que voy a mi padre, voy a su hijo izquierdo, su hijo izquierdo actual se convierte en mi hermano y el nuevo nodo pasa a ser el hijo izquierdo
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Position<E> root() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Position<E> parent(Position<E> v) { //podria ser static
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     /* Y si quiero un getChildren?
@@ -159,26 +159,26 @@ public class LCRSTree<E> implements NAryTree<E> {
 
     @Override
     public boolean isInternal(Position<E> v) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean isLeaf(Position<E> v) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean isRoot(Position<E> v) {  //podria ser static
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Iterator<Position<E>> iterator() { //si nuestro preorderiterator estuviese bien hecho nos serviria
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

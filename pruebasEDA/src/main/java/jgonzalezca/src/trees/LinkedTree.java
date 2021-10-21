@@ -72,13 +72,13 @@ public class LinkedTree<E> implements NAryTree<E> {
     	root = null; //hacemos esto porque hemos visto que existe el metodo addroot
     }
     
-	private TreeNode<E> checkPosition(Position<E> p) throws Exception{
+	private TreeNode<E> checkPosition(Position<E> p) throws RuntimeException{
 		if (p == null || !(p instanceof TreeNode)) {
-			throw new Exception("Invalid position");
+			throw new RuntimeException("Invalid position");
 		}
 		TreeNode n = (TreeNode<E>) p;
 		if (!n.getA().equals(this)) { //la recomendacio del profesor para evitar problemas con attach y subtree es no poner esto
-			throw new Exception("Invalid position"); //compruebo si el getA es igual a mi arbol, esto e simportante. si le paso un position incorrecto al remove de otro arbol daria excepcion
+			throw new RuntimeException("Invalid position"); //compruebo si el getA es igual a mi arbol, esto e simportante. si le paso un position incorrecto al remove de otro arbol daria excepcion
 		}
 		return n;
 	}
@@ -98,7 +98,7 @@ public class LinkedTree<E> implements NAryTree<E> {
 	        List<TreeNode<E>> l = parent.getChildren();
 	        l.add(newNode);
 	        return newNode;	
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
@@ -118,7 +118,7 @@ public class LinkedTree<E> implements NAryTree<E> {
 	    	E newElement = origen.getElement();
 	    	origen.setElement(destino.getElement());
 	    	destino.setElement(newElement);
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -129,7 +129,7 @@ public class LinkedTree<E> implements NAryTree<E> {
     	TreeNode<E> node;
 		try {
 			node = checkPosition(p);
-		} catch (Exception e1) {
+		} catch (RuntimeException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 			return null;
@@ -149,7 +149,7 @@ public class LinkedTree<E> implements NAryTree<E> {
 	    	else {
 	    		node.getParent().getChildren().remove(node);	
 	    	}  	
-		} catch (Exception e1) {
+		} catch (RuntimeException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
@@ -162,7 +162,7 @@ public class LinkedTree<E> implements NAryTree<E> {
 	    	LinkedTree<E> salida = new LinkedTree<>();
 	    	salida.addRoot(v.getElement());
 	    	return salida;
-		} catch (Exception e1) {
+		} catch (RuntimeException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 			return null;
@@ -179,7 +179,7 @@ public class LinkedTree<E> implements NAryTree<E> {
     		TreeNode<E> anclaje = this.checkPosition(p);
     		treeRoot.setParent(anclaje);
     		anclaje.getChildren().add(treeRoot);
-    		} catch (Exception e1) {
+    		} catch (RuntimeException e1) {
     			// TODO Auto-generated catch block
     			e1.printStackTrace();
     		}
@@ -203,7 +203,7 @@ public class LinkedTree<E> implements NAryTree<E> {
 		try {
 			nodo = this.checkPosition(v);
 			return nodo.getParent();
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
@@ -213,22 +213,22 @@ public class LinkedTree<E> implements NAryTree<E> {
 
     @Override
     public Iterable<? extends Position<E>> children(Position<E> v) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean isInternal(Position<E> v) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean isLeaf(Position<E> v) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean isRoot(Position<E> v) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -237,6 +237,6 @@ public class LinkedTree<E> implements NAryTree<E> {
     }
  
     public int size(){
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates. 
+        throw new UnsupportedOperationRuntimeException("Not supported yet."); //To change body of generated methods, choose Tools | Templates. 
     }
 }

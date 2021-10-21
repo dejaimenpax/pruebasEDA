@@ -80,10 +80,26 @@ public class PreOrderIterator<E> implements Iterator<Position<E>>{
 		
 		//el iterador va a necesitar conocer el arbol, esto nos lleva a un segundo atributo
 		
-		for(Position<E> q : a.children(p)) //si no tengo el atributo arbol, no puedo hacer esto
+		for(Position<E> q : a.children(p)) //NO NOS SIRVE INSERTAR POR AL FINAL. HAY QUE INSERTAR POR EL PRINCIPIO PERO ASEGURANDOME DE QUE LOS HIJOS SE INSERTAN AL REVES
 			list.add(q);
 		
 		return p;
+		
+		/* PUES RESULTA QUE LO DE ARRIBA ESTA MAL, LO CORRECTO SERIA LO SIGUIENTE
+		 * SI BIEN ES CIERTO QUE CON EL FOR SE RECORRE EL ARBOL, NO ES UN PREORDER  */
+		
+		Position<E> p = this.list.remove(0);
+		List<Position<E>> reversedList = new LinkedList<>();
+		for(Position<E> q : a.children(p)) //NO NOS SIRVE INSERTAR POR AL FINAL. HAY QUE INSERTAR POR EL PRINCIPIO PERO ASEGURANDOME DE QUE LOS HIJOS SE INSERTAN AL REVES
+			reversedList.add(q);
+		for(Position<E> q : reversedList)
+			list.add(q);
+		return p;
+		
+		
+		
+		
+		
 	
 	
 	

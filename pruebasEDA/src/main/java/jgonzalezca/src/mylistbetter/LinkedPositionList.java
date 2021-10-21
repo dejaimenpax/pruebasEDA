@@ -55,9 +55,9 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
 		this.size = 0;
 	}
 	
-	private LinkedNode<E> checkPosition(Position<E> p) throws Exception{
+	private LinkedNode<E> checkPosition(Position<E> p) throws RuntimeException{
 		if (p == null || !(p instanceof LinkedNode)) {
-			throw new Exception("Invalid position");
+			throw new RuntimeException("Invalid position");
 		}
 		return (LinkedNode<E>) p;
 	}
@@ -90,7 +90,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
 			}
 			this.size++;
 			return (Position<E>) newNode;
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
@@ -108,7 +108,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
 			nextNode.setPrev(newNode);
 			this.size++;
 			return (Position<E>) newNode;
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
@@ -138,8 +138,8 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
 				return elem;
 			}
 			else
-				throw new RuntimeException("Empty list!");
-		} catch (Exception e) {
+				throw new RuntimeRuntimeException("Empty list!");
+		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
@@ -150,7 +150,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
     	if (!this.isempty())
     		return (Position<E>) this.head;
     	else
-    		throw new RuntimeException("Empty list!");  	
+    		throw new RuntimeRuntimeException("Empty list!");  	
     }
     
     public Position<E> set(Position<E> pos, E value){
@@ -158,7 +158,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
 			LinkedNode<E> ourNode = this.checkPosition(pos);
 			ourNode.setElement(value);
 			return (Position<E>) ourNode;
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
@@ -192,7 +192,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
     public Position<E> getNextPosition(){
 		try {
 			return (Position<E>) this.checkPosition(head.getNext()); //redundante?
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;

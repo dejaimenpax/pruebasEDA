@@ -80,11 +80,11 @@ public class LinkedPositionListTest<E> {
 	     
 	    /**
 	     * Test of add and remove methods, of class FloatLinkedList.
-	     * @throws Exception 
+	     * @throws RuntimeException 
 	     */
 	    
 	    @Test
-	    public void testAddBefore_int_Remove() throws Exception {
+	    public void testAddBefore_int_Remove() throws RuntimeException {
 	        System.out.println("addBefore");
 	        Integer value = new Integer(5);
 	        LinkedPositionList<Integer> instance = inicializa(); // [12, 8, 3]
@@ -109,11 +109,11 @@ public class LinkedPositionListTest<E> {
 
 	    /**
 	     * Test of remove method, of class FloatLinkedList.
-	     * @throws Exception 
+	     * @throws RuntimeException 
 	     */
 	     
 	    @Test
-	    public void testRemove_int() throws Exception {
+	    public void testRemove_int() throws RuntimeException {
 	        System.out.println("remove");
 	        LinkedPositionList<Integer> instance = inicializa(); // [12, 8, 3]
 	        Position<Integer> index = instance.addAfter(instance.get(), 4); // 12 4 8 3
