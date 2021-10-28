@@ -21,12 +21,12 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
             throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        @Override
+        
         public U getValue() {
         	return this.getValue();
         }
 
-        @Override
+        
         public T getKey() {
         	return this.getKey();
         }
@@ -36,7 +36,7 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
         	return val;
         }
 
-        @Override
+        
         public boolean equals(Object o) {
         	if (this==o)
     			return true;
@@ -53,7 +53,7 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
         /**
          * Entry visualization.
          */
-        @Override
+        
         public String toString() {
         	return ("Clave: " + this.getKey() + ", Valor: " + this.getValue());
         }
@@ -70,17 +70,17 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
             throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        @Override
+        
         public boolean hasNext() {
             throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        @Override
+        
         public Entry<T, U> next() {
             throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        @Override
+        
         public void remove() {
             // NO HAY QUE IMPLEMENTARLO
             throw new UnsupportedOperationException("Not implemented.");
@@ -93,17 +93,17 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
             throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        @Override
+        
         public T next() {
             throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        @Override
+        
         public boolean hasNext() {
             throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        @Override
+        
         public void remove() {
             // NO HAY QUE IMPLEMENTARLO
             throw new UnsupportedOperationException("Not implemented.");
@@ -116,17 +116,17 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
             throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        @Override
+        
         public U next() {
             throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        @Override
+        
         public boolean hasNext() {
             throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        @Override
+        
         public void remove() {
             throw new UnsupportedOperationException("Not implemented.");
         }
@@ -173,7 +173,7 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
      *
      * @return the size
      */
-    @Override
+    
     public int size() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -183,7 +183,7 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
      *
      * @return true if the size is 0
      */
-    @Override
+    
     public boolean isEmpty() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -194,7 +194,7 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
      * @param key
      * @return value
      */
-    @Override
+    
     public V get(K key) throws IllegalStateException {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -206,7 +206,7 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
      * @param value
      * @return value
      */
-    @Override
+    
     public V put(K key, V value) throws IllegalStateException {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -217,12 +217,12 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
      * @param key
      * @return
      */
-    @Override
+    
     public V remove(K key) throws IllegalStateException {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    @Override
+    
     public Iterator<Entry<K, V>> iterator() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -232,7 +232,7 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
      *
      * @return
      */
-    @Override
+    
     public Iterable<K> keys() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -242,7 +242,7 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
      *
      * @return
      */
-    @Override
+    
     public Iterable<V> values() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -252,7 +252,7 @@ public class HashTableMapSC<K, V> implements Map<K, V> {
      *
      * @return
      */
-    @Override
+    
     public Iterable<Entry<K, V>> entries() {
         throw new UnsupportedOperationException("Not yet implemented");
     }

@@ -21,6 +21,11 @@ public class IteratorLinkedPosition<E> implements Iterator<Position<E>> {
 		this.pos = this.list.getNextPosition();
 		return aux;
 	}
-	
+
+	@Override
+	public void remove() {
+		throw new UnsupportedOperationException();
+	}
+
 
 }

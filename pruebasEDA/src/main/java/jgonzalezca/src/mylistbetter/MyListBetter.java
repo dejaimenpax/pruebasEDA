@@ -100,6 +100,6 @@ public interface MyListBetter<E> extends Iterable<Position<E>>{
      * 
      * @return 
      */
-    @Override
+    
     public Iterator<Position<E>> iterator();
 }

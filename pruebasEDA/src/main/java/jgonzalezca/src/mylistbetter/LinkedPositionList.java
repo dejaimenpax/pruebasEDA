@@ -138,7 +138,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
 				return elem;
 			}
 			else
-				throw new RuntimeRuntimeException("Empty list!");
+				throw new RuntimeException("Empty list!");
 		} catch (RuntimeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -150,7 +150,7 @@ public class LinkedPositionList<E> implements MyListBetter<E> {
     	if (!this.isempty())
     		return (Position<E>) this.head;
     	else
-    		throw new RuntimeRuntimeException("Empty list!");  	
+    		throw new RuntimeException("Empty list!");
     }
     
     public Position<E> set(Position<E> pos, E value){

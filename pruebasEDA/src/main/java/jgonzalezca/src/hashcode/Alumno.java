@@ -37,7 +37,7 @@ public class Alumno {
 		this.edad = edad;
 	}
 	
-	@Override
+	
 	public boolean equals(Object o) {
 		if (this==o)
 			return true;
@@ -53,7 +53,7 @@ public class Alumno {
 			
 	}
 	
-	@Override
+	
 	public int hashCode() {
 		int code1 = Integer.parseInt(this.dni.substring(0,8));
 		int code2 = 0;
