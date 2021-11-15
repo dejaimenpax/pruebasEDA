@@ -1,0 +1,16 @@
+Ejercicio 1
+
+public class CommonAncestorTree<E> {
+	private NAryTree<E> mytree;
+	
+	public CommonAncestorTree(NAryTree<E> tree){
+		mytree= tree;
+	}
+	
+	public NAryTree<E> createCommonTreeAncestor(Position<E> p1, Position<E> p2) {
+		Position<E> padre1 = mytree.parent(p1);
+		Position<E> padre2 = mytree.parent(p2);
+		while(!mytree.isRoot(padre1) && !mytree.isRoot(padre2)){
+			padre1=mytree.parent(padre1);
+			padre2=mytree.paren(padre2);
+			
